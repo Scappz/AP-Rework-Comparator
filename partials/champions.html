@@ -1,0 +1,19 @@
+<div id="derecha">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Champion name" ng-model="test">
+        <div class="input-group-btn" style="display: inline-block;">  
+            <span style="cursor:auto;" class="btn btn-info"><span style="cursor:auto;" class="glyphicon glyphicon-search"></span></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12"><h1 id="titulo">CHAMPIONS</h1></div>
+</div>
+<br>
+<div class="champion-list">
+<table class="table table-bordered">
+<tr ng-repeat="trs in champs" ng-if="$index % howMany == 0" ng-init="pIdx=$index">
+  <td ng-repeat="(k, obj) in champs.slice(pIdx,pIdx+howMany) | startsWith:test | orderBy:'key'"><a href="#champion/{{obj.key}}"><img class="champion" src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/{{obj.key}}.png"><br>{{obj.key}}</a></td>
+</tr>
+</table>
+</div>

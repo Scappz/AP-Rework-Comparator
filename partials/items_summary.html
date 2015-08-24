@@ -1,0 +1,61 @@
+<div class="container"> <!-- Tabla de resumen de items -->
+
+<h1 id="titulo">ITEMS</h1>
+<br>
+<table class="table table-hover">
+    <tr>
+        <th></th>
+        <th colspan="2" style="text-align:center;">Winrate</th>
+        <th colspan="2" style="text-align:center;">Kills</th>
+        <th colspan="2" style="text-align:center;">Deaths</th>
+        <th colspan="2" style="text-align:center;">Assists</th>
+        <th colspan="2" style="text-align:center;">KDA</th>
+        <th colspan="2" style="text-align:center;">Damage</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><a href="" ng-click="reverseSortChange('winrate.before'); orderByField='winrate.before'">Before</a> <span ng-if="orderByField=='winrate.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('winrate.after'); orderByField='winrate.after'">After</a> <span ng-if="orderByField=='winrate.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('kills.before'); orderByField='kills.before'">Before</a> <span ng-if="orderByField=='kills.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('kills.after'); orderByField='kills.after'">After</a> <span ng-if="orderByField=='kills.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('deaths.before'); orderByField='deaths.before'">Before</a> <span ng-if="orderByField=='deaths.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('deaths.after'); orderByField='deaths.after'">After</a> <span ng-if="orderByField=='deaths.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('assists.before'); orderByField='assists.before'">Before</a> <span ng-if="orderByField=='assists.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('assists.after'); orderByField='assists.after'">After</a> <span ng-if="orderByField=='assists.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('kda.before'); orderByField='kda.before'">Before</a> <span ng-if="orderByField=='kda.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('kda.after'); orderByField='kda.after'">After</a> <span ng-if="orderByField=='kda.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('dmgDealt.before'); orderByField='dmgDealt.before'">Before</a> <span ng-if="orderByField=='dmgDealt.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th><a href="" ng-click="reverseSortChange('dmgDealt.after'); orderByField='dmgDealt.after'">After</a> <span ng-if="orderByField=='dmgDealt.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th></th>
+    </tr>
+  <tr ng-repeat="val in items | orderBy:orderByField:reverseSort">
+      <td><a data-toggle="tooltip" title="See the full stats" href="#item/{{val.item}}"><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/{{val.item}}.png"></a></td>
+      <td>{{val.winrate.before*100|dosDecimales}}%</td>
+      <td ng-model="diff = (val.winrate.after-val.winrate.before)*100"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}%"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.winrate.after*100|dosDecimales}}%</span></td>
+      <td>{{val.kills.before}}</td>
+      <td ng-model="diff = val.kills.after-val.kills.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.kills.after}}</span></td>
+      <td>{{val.deaths.before}}</td> <!-- ng-class-even="'blue1'" ng-class-odd="'blue2'"-->
+      <td ng-model="diff = val.deaths.after-val.deaths.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.deaths.after}}</span></td>
+      <td>{{val.assists.before}}</td>
+      <td ng-model="diff = val.assists.after-val.assists.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.assists.after}}</span></td>
+      <td>{{val.kda.before}}</td>
+      <td ng-model="diff = val.kda.after-val.kda.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.kda.after}}</span></td>
+      <td>{{val.dmgDealt.before}}</td>
+      <td ng-model="diff = val.dmgDealt.after-val.dmgDealt.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="glyphicon glyphicon-triangle-{{diff<0?'bottom red':diff>0?'top green':'right blue'}}"></span> {{val.dmgDealt.after}}</span></td>
+      <td><a href="#item/{{val.item}}"><span data-toggle="tooltip" title="See the full stats"><span class="glyphicon glyphicon-plus"></span> More info</span></a></td>
+  </tr>
+</table>
+</div>
+
+<div class="container-fluid"> <!-- Tabla de lista de campeones -->
+<h1 id="titulo">CHAMPIONS</h1>
+<br>
+<div class="champion-list">
+<table class="table table-bordered">
+<tr ng-repeat="trs in champs" ng-if="$index % howMany == 0" ng-init="pIdx=$index">
+  <td ng-repeat="(k, obj) in champs.slice(pIdx,pIdx+howMany) | orderBy:'key'"><a href="#champion/{{obj.key}}"><img class="champion" src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/{{obj.key}}.png"><br>{{obj.key}}</a></td>
+</tr>
+</table>
+</div>
+</div>

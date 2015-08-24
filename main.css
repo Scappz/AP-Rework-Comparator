@@ -1,0 +1,155 @@
+html, body {
+    background: linear-gradient(90deg, #182433, #2b415d, #182433);
+}
+.main-container {
+  max-width: 1400px;
+  width: 95%;
+  margin: auto;
+  background-color: #1b2839;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #000f24;
+}
+/* Para el cuadrado de la leyenda de las gráficas */
+.tc-chart-js-legend li span {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+.tc-chart-js-legend {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.input-group {
+  display: block;
+  width: 200px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+a.menu:link, a.menu:active, a.menu:visited, a.menu:active {
+    color: rgb(21, 192, 255);
+    font-weight: bolder !important;
+    text-decoration: none !important;
+}
+a.menu:hover {
+    color: rgb(158, 229, 255);
+}
+.menudiv {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.menudiv:hover {
+    background-color: rgba(96, 48, 0, 0.5);
+}
+.large-header {
+  padding: 20px 12%;
+  background-image: url(img/header.jpg);
+  background-position-y: 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.large-header h2 {
+  font-size: 1.75em;
+  line-height: 1.6em;
+  color: rgb(224, 137, 51);
+  margin-top: 5px;
+  text-align: center;
+}
+.large-header>h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+a#titulo-principal.menu:link, a#titulo-principal.menu:visited, a#titulo-principal.menu:active  {
+    color: #67e367;
+    text-align: center;
+}
+a#titulo-principal.menu:hover {
+    color: #9eff9e;
+}
+#titulo {
+    color: #ff608b;
+    text-align: center;
+}
+#titulo2 {
+    color: rgb(21, 192, 255);
+    text-align: center;
+}
+#before, #before a:link, #before a:active, #before a:hover, #before a:visited{
+    color: rgb(173, 107, 208);
+}
+#after, #after a:link, #after a:active, #after a:hover, #after a:visited{
+    color: rgb(132, 216, 155);
+}
+a:link, a:active, a:hover, a:visited {
+    color: #63b6ff;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #042b48;
+}
+.col-md-1 {
+    text-align: center;
+}
+/* Para quitar los bordes a la lista de campeones */
+.champion-list>.table-bordered, .champion-list>.table-bordered>tbody>tr>td, .champion-list>.table-bordered>tbody>tr, .champion-list>.table-bordered>tbody>tr>th, .champion-list>.table-bordered>tfoot>tr>td, .champion-list>.table-bordered>tfoot>tr>th, .champion-list>.table-bordered>thead>tr>td, .champion-list>.table-bordered>thead>tr>th, .champion-list>.table>tbody>tr>td, .champion-list>.table>tbody>tr>th, .champion-list>.table>tfoot>tr>td, .champion-list>.table>tfoot>tr>th, .champion-list>.table>thead>tr>td, .champion-list>.table>thead>tr>th {
+  border: 0px;
+  background-color: transparent !important;
+}
+
+body {
+    background-color: #171b1c;
+    color: #E0E0E0;
+}
+table, th, tr, td {
+    text-align: center;
+    font-weight: bolder;
+    vertical-align: middle !important;
+}
+.table.table-hover tr:nth-of-type(odd), .table.table-bordered tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.table.table-hover tr:nth-of-type(even), .table.table-bordered tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+img {
+    max-height: 60px;
+}
+
+img.champion {
+    max-height: 120px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.big {
+    max-height: 120px;
+    height: 120px;
+    width: 120px;
+    padding: 0px;
+}
+.blue1 {
+    background-color: #e1efff;
+}
+.blue2 {
+    background-color: #dddcff;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: #0062ff;
+}
+footer {
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+}
+#derecha {
+    float:right;
+    margin-right: 60px;
+}

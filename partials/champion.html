@@ -1,0 +1,81 @@
+<div class="container"> <!-- Tabla de resumen de items -->
+    <br><br>
+    <div class="row">
+        <div class="col-lg-2"><h1 id="titulo">{{champion.key}}</h1><br><img class="champion" src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/{{champKey}}.png"><br><br>
+            <div tc-chartjs-legend chart-legend="lineChart1"></div>
+        </div>
+        <div class="col-lg-10">
+            <div><canvas tc-chartjs-bar chart-options="options" chart-data="data1" chart-legend="lineChart1"></canvas></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+<br><br>
+<table class="table table-bordered">
+    <tr>
+        <th></th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Win Rate</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Kills</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Deaths</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Assists</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">KDA</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">DMG Dealt</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">DMG Taken</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Minions</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Jungle</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Healing</th>
+        <th colspan="2" id="titulo2" style="text-align:center;">Gold</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('winrate.before'); orderByField='winrate.before'">B</a> <span ng-if="orderByField=='winrate.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('winrate.after'); orderByField='winrate.after'">A</a> <span ng-if="orderByField=='winrate.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('kills.before'); orderByField='kills.before'">B</a> <span ng-if="orderByField=='kills.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('kills.after'); orderByField='kills.after'">A</a> <span ng-if="orderByField=='kills.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('deaths.before'); orderByField='deaths.before'">B</a> <span ng-if="orderByField=='deaths.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('deaths.after'); orderByField='deaths.after'">A</a> <span ng-if="orderByField=='deaths.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('assists.before'); orderByField='assists.before'">B</a> <span ng-if="orderByField=='assists.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('assists.after'); orderByField='assists.after'">A</a> <span ng-if="orderByField=='assists.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('kda.before'); orderByField='kda.before'">B</a> <span ng-if="orderByField=='kda.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('kda.after'); orderByField='kda.after'">A</a> <span ng-if="orderByField=='kda.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('dmgDealt.before'); orderByField='dmgDealt.before'">B</a> <span ng-if="orderByField=='dmgDealt.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('dmgDealt.after'); orderByField='dmgDealt.after'">A</a> <span ng-if="orderByField=='dmgDealt.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('dmgTaken.before'); orderByField='dmgTaken.before'">B</a> <span ng-if="orderByField=='dmgTaken.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('dmgTaken.after'); orderByField='dmgTaken.after'">A</a> <span ng-if="orderByField=='dmgTaken.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('minions.before'); orderByField='minions.before'">B</a> <span ng-if="orderByField=='minions.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('minions.after'); orderByField='minions.after'">A</a> <span ng-if="orderByField=='minions.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('jungle.before'); orderByField='jungle.before'">B</a> <span ng-if="orderByField=='jungle.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('jungle.after'); orderByField='jungle.after'">A</a> <span ng-if="orderByField=='jungle.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('heal.before'); orderByField='heal.before'">B</a> <span ng-if="orderByField=='heal.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('heal.after'); orderByField='heal.after'">A</a> <span ng-if="orderByField=='heal.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="before"><span data-toggle="tooltip" title="Before"><a href="" ng-click="reverseSortChange('gold.before'); orderByField='gold.before'">B</a> <span ng-if="orderByField=='gold.before'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+        <th id="after"><span data-toggle="tooltip" title="After"><a href="" ng-click="reverseSortChange('gold.after'); orderByField='gold.after'">A</a> <span ng-if="orderByField=='gold.after'" class="glyphicon glyphicon-menu-{{reverseSort?'down':'up'}}"></span></span></th>
+    </tr>
+  <tr ng-repeat="el_item in champion.items | orderBy:orderByField:reverseSort">
+      <td><img src="http://ddragon.leagueoflegends.com/cdn/5.15.1/img/item/{{el_item.item}}.png"></td>
+      <td>{{el_item.winrate.before*100|dosDecimales}}%</td>
+      <td ng-model="diff = (el_item.winrate.after-el_item.winrate.before)*100"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}%"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.winrate.after*100|dosDecimales}}%</span></span></td>
+      <td>{{el_item.kills.before}}</td>
+      <td ng-model="diff = el_item.kills.after-el_item.kills.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}"> {{el_item.kills.after}}</span></span></td>
+      <td>{{el_item.deaths.before}}</td> <!-- ng-class-even="'blue1'" ng-class-odd="'blue2'"-->
+      <td ng-model="diff = el_item.deaths.after-el_item.deaths.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.deaths.after}}</span></span></td>
+      <td>{{el_item.assists.before}}</td>
+      <td ng-model="diff = el_item.assists.after-el_item.assists.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.assists.after}}</span></span></td>
+      <td>{{el_item.kda.before}}</td>
+      <td ng-model="diff = el_item.kda.after-el_item.kda.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.kda.after}}</span></span></td>
+      <td>{{el_item.dmgDealt.before}}</td>
+      <td ng-model="diff = el_item.dmgDealt.after-el_item.dmgDealt.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.dmgDealt.after}}</span></span></td>
+      <td>{{el_item.dmgTaken.before}}</td>
+      <td ng-model="diff = el_item.dmgTaken.after-el_item.dmgTaken.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.dmgTaken.after}}</span></span></td>
+      <td>{{el_item.minions.before}}</td>
+      <td ng-model="diff = el_item.minions.after-el_item.minions.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.minions.after}}</span></span></td>
+      <td>{{el_item.jungle.before}}</td>
+      <td ng-model="diff = el_item.jungle.after-el_item.jungle.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.jungle.after}}</span></span></td>
+      <td>{{el_item.heal.before}}</td>
+      <td ng-model="diff = el_item.heal.after-el_item.heal.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.heal.after}}</span></span></td>
+      <td>{{el_item.gold.before}}</td>
+      <td ng-model="diff = el_item.gold.after-el_item.gold.before"><span data-toggle="tooltip" data-original-title="{{diff>0?'+':''}}{{diff|dosDecimales}}"><span class="{{diff<0?'red':diff>0?'green':'blue'}}">{{el_item.gold.after}}</span></span></td>
+  </tr>
+</table>
+    
+</div>

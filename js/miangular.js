@@ -442,28 +442,28 @@ app.config(function($routeProvider) {
 
         // route for the home page
         .when('/', {
-            templateUrl : '/partials/items_summary.html',
+            templateUrl : '/AP-Rework-Comparator/partials/items_summary.html',
             controller  : 'mainController'
         })
 
         .when('/champions', {
-            templateUrl : '/partials/champions.html',
+            templateUrl : '/AP-Rework-Comparator/partials/champions.html',
             controller  : 'mainController'
         })
         
         // route for the about page
         .when('/item/:item', {
-            templateUrl : '/partials/item.html',
+            templateUrl : '/AP-Rework-Comparator/partials/item.html',
             controller  : 'itemController'
         })
 
         // route for the contact page
         .when('/champion/:champion', {
-            templateUrl : '/partials/champion.html',
+            templateUrl : '/AP-Rework-Comparator/partials/champion.html',
             controller  : 'championController'
         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/AP-Rework-Comparator'
         });
 });
 app.run(function ($rootScope, $anchorScroll) {
